@@ -35,4 +35,11 @@ def sort_word(word):
     for word in get_definition(soup):
         print("\t" + word)
 
-sort_word("amare")
+def read_args():
+    if len(sys.argv) == 1:
+        print("please enter a word in latin")
+        return
+    for arg in sys.argv[1:]:
+        sort_word(arg)
+
+read_args()
