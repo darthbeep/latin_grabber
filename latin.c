@@ -19,6 +19,7 @@ int main(int argc, char const *argv[]) {
   char * url = geturl(word);
   printf("%s\n", url);
   curl(url);
+  printf("%s\n", "end");
   free(url);
   return 0;
 }
