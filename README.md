@@ -25,3 +25,5 @@ Gives
                 second-person singular present passive imperative of amō
                 second-person singular present passive indicative of amō
 ```
+
+Meant for python3 and requires the modules bs4 and urllib3
