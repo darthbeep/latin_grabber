@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import sys
 import urllib3
 import re
@@ -40,6 +42,24 @@ def read_args():
         print("please enter a word in latin")
         return
     for arg in sys.argv[1:]:
-        sort_word(arg)
+        sort_word(clean_work(arg))
 
+def replace_macrons(char):
+    if char=="ā":
+        return "a"
+    elif char=="ē":
+        return "e"
+    elif char=="ī":
+        return "i"
+    elif char=="ō":
+        return "o"
+    elif char=="ū":
+        return "u"
+    elif char=="." or char=="?" or char=="!":
+        return ""
+    else:
+        return char
+
+def clean_work(word):
+	return ''.join(list(map(replace_macrons, word))).lower();
 read_args()
