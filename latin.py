@@ -14,7 +14,10 @@ def get_html(word):
     return soup
 
 def get_definition(soup):
-    start = soup.find(id="Latin").parent.findNext("ol")
+    fnd = soup.find(id="Latin")
+    if fnd==None:
+        return ["\tNot Found"]
+    start = fnd.parent.findNext("ol")
     lst = start.find_all('li', recursive=False)
     ret = []
     found = []
